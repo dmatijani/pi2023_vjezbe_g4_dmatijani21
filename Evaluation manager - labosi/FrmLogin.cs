@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Evaluation_manager___labosi.Models;
+using Evaluation_manager___labosi.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,7 @@ namespace Evaluation_manager___labosi
 {
     public partial class FrmLogin : Form
     {
-        // Hard-codani korisničko ime i lozinka
-        string username = "nastavnik";
-        string password = "test";
+        public static Teacher LoggedTeacher { get; set; }
 
         public FrmLogin()
         {
@@ -60,7 +60,9 @@ namespace Evaluation_manager___labosi
 
                 case 3:
                 {
-                    if ((txtUsername.Text == username) && (txtPassword.Text == password))
+                    LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
+
+                    if (LoggedTeacher.Username != null && LoggedTeacher.CheckPassword(txtPassword.Text))
                     {
                         // Kreira novu formu
                         FrmStudents frmStudents = new FrmStudents();
