@@ -16,6 +16,8 @@ namespace Evaluation_manager___labosi
     {
         private Student student; // Student koji se prikazuje u ovoj formi
 
+        public Student SelectedStudent { get => student; set => student = value; }
+
         public FrmEvaluation(Student selectedStudent)
         {
             InitializeComponent();
@@ -48,6 +50,21 @@ namespace Evaluation_manager___labosi
 
             numPoints.Minimum = 0;
             numPoints.Maximum = currentActivity.MaxPoints;
+
+            // Dio sa labosa 12. tjedan
+            var evaluation = EvaluationRepository.GetEvaluation(SelectedStudent, currentActivity);
+            if (evaluation != null) // Provjerava postoji li ta evaluacija
+            {
+                txtTeacher.Text = evaluation.Evaluator.ToString();
+                txtEvaluationDate.Text = evaluation.EvaluationDate.ToString();
+                numPoints.Value = evaluation.Points;
+            }
+            else // Ako nije unesen broj bodova
+            {
+                txtTeacher.Text = FrmLogin.LoggedTeacher.ToString();
+                txtEvaluationDate.Text = "-";
+                numPoints.Value = 0;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
