@@ -65,5 +65,25 @@ namespace Evaluation_manager___labosi.Repositories
             };
             return evaluation;
         }
+
+        public static void InsertEvaluation (Student student, Activity activity, Teacher teacher, int points)
+        {
+            string sql = $"INSERT INTO Evaluations (IdActivities, IdStudents, IdTeachers, EvaluationDate, Points) VALUES ({activity.Id}, {student.Id}, {teacher.Id}, GETDATE(), {points})";
+
+            // Unošenje novog zapisa u bazu
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+
+        public static void UpdateEvaluation (Evaluation evaluation, Teacher teacher, int points)
+        {
+            string sql = $"UPDATE Evaluations SET IdTeachers = {teacher.Id}, Points = {points}, EvaluationDate = GETDATE() WHERE IdActivities = {evaluation.Activity.Id} AND IdStudents = {evaluation.Student.Id}";
+
+            // Ažuriranje zapisa u bazi
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
     }
 }
