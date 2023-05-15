@@ -51,7 +51,7 @@
             this.cboActivities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboActivities.FormattingEnabled = true;
             this.cboActivities.Location = new System.Drawing.Point(16, 33);
-            this.cboActivities.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboActivities.Margin = new System.Windows.Forms.Padding(4);
             this.cboActivities.Name = "cboActivities";
             this.cboActivities.Size = new System.Drawing.Size(323, 24);
             this.cboActivities.TabIndex = 0;
@@ -70,7 +70,7 @@
             // txtMinForSignature
             // 
             this.txtMinForSignature.Location = new System.Drawing.Point(391, 33);
-            this.txtMinForSignature.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMinForSignature.Margin = new System.Windows.Forms.Padding(4);
             this.txtMinForSignature.Name = "txtMinForSignature";
             this.txtMinForSignature.ReadOnly = true;
             this.txtMinForSignature.Size = new System.Drawing.Size(148, 22);
@@ -79,7 +79,7 @@
             // txtMinForGrade
             // 
             this.txtMinForGrade.Location = new System.Drawing.Point(547, 33);
-            this.txtMinForGrade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMinForGrade.Margin = new System.Windows.Forms.Padding(4);
             this.txtMinForGrade.Name = "txtMinForGrade";
             this.txtMinForGrade.ReadOnly = true;
             this.txtMinForGrade.Size = new System.Drawing.Size(163, 22);
@@ -109,7 +109,7 @@
             // txtActivityDescription
             // 
             this.txtActivityDescription.Location = new System.Drawing.Point(16, 76);
-            this.txtActivityDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtActivityDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtActivityDescription.Multiline = true;
             this.txtActivityDescription.Name = "txtActivityDescription";
             this.txtActivityDescription.ReadOnly = true;
@@ -119,7 +119,7 @@
             // txtTeacher
             // 
             this.txtTeacher.Location = new System.Drawing.Point(335, 280);
-            this.txtTeacher.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTeacher.Margin = new System.Windows.Forms.Padding(4);
             this.txtTeacher.Name = "txtTeacher";
             this.txtTeacher.ReadOnly = true;
             this.txtTeacher.Size = new System.Drawing.Size(143, 22);
@@ -128,7 +128,7 @@
             // txtEvaluationDate
             // 
             this.txtEvaluationDate.Location = new System.Drawing.Point(487, 280);
-            this.txtEvaluationDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEvaluationDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtEvaluationDate.Name = "txtEvaluationDate";
             this.txtEvaluationDate.ReadOnly = true;
             this.txtEvaluationDate.Size = new System.Drawing.Size(143, 22);
@@ -137,7 +137,7 @@
             // numPoints
             // 
             this.numPoints.Location = new System.Drawing.Point(639, 280);
-            this.numPoints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numPoints.Margin = new System.Windows.Forms.Padding(4);
             this.numPoints.Name = "numPoints";
             this.numPoints.Size = new System.Drawing.Size(71, 22);
             this.numPoints.TabIndex = 9;
@@ -145,7 +145,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(595, 327);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(115, 28);
             this.btnCancel.TabIndex = 10;
@@ -156,12 +156,13 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(470, 327);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 28);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Spremi";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblTeacher
             // 
@@ -213,7 +214,7 @@
             this.Controls.Add(this.txtMinForSignature);
             this.Controls.Add(this.lblActivities);
             this.Controls.Add(this.cboActivities);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmEvaluation";
             this.Text = "FrmEvaluation";
             this.Load += new System.EventHandler(this.FrmEvaluation_Load);
