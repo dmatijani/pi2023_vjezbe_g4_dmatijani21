@@ -36,9 +36,9 @@ namespace Evaluation_manager___labosi.Models
 
             var kolokvij1 = evaluations.FirstOrDefault(e => e.Activity.Name == "Kolokvij 1");
             var kolokvij2 = evaluations.FirstOrDefault(e => e.Activity.Name == "Kolokvij 2");
-            var zadaca1 = evaluations.FirstOrDefault(e => e.Activity.Name == "Zadaća 1");
-            var zadaca2 = evaluations.FirstOrDefault(e => e.Activity.Name == "Zadaća 2");
-            var zadaca3 = evaluations.FirstOrDefault(e => e.Activity.Name == "Zadaća 3");
+            var zadaca1 = evaluations.FirstOrDefault(e => e.Activity.Name == "Zadaca 1");
+            var zadaca2 = evaluations.FirstOrDefault(e => e.Activity.Name == "Zadaca 2");
+            var zadaca3 = evaluations.FirstOrDefault(e => e.Activity.Name == "Zadaca 3");
 
             K1 = kolokvij1 == null ? "-" : kolokvij1.Points.ToString();
             K2 = kolokvij2 == null ? "-" : kolokvij2.Points.ToString();
